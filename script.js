@@ -165,10 +165,21 @@ function nextQuestion() {
 		callQuestion(currentQuestion)
 }
 
+function disableQuestion(id) {
+	toggleBody(id)
+	$(`#expand-${id}`).fadeOut(300)
+	setTimeout(function(){
+		$(`#expand-${id}`).remove()
+		$(`#${id} .question-header`).append('<span class="correct"><div class="bar"></div><div class="bar"></div></span>')
+		$(`#${id} input`).remove()
+	}, 301)
+}
+
 function submitAnswer(id) {
 	console.log('running submitAnswer')
 
 	if (checkAnswer(id)) {
+		disableQuestion(id)
 		nextQuestion()
 	} else {
 		endGame(false)

@@ -58,7 +58,6 @@ h2 {
 .expand {
     cursor: pointer;
     transform: scale(1);
-    transition: all .3s;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,6 +77,27 @@ h2 {
 
 .expand.open {
     transform: rotate(45deg);
+}
+
+.correct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all .3s ease;
+}
+
+.correct .bar:first-child {
+    width: 15px;
+    height: 5px;
+    background-color: #000;
+    transform: rotate(40deg);
+}
+
+.correct .bar:last-child {
+    width: 30px;
+    height: 5px;
+    background-color: #000;
+    transform: rotate(-45deg) translate(11.5px);
 }
 
 .submit-answer {
