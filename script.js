@@ -108,7 +108,7 @@ function toggleBody(id) {
 
 function toggleIcon(id) {
 	console.log('running toggleIcon')
-	$('.expand').toggleClass('open')
+	$(`#expand-${id}`).toggleClass('open')
 }
 
 function askQuestion(question) {
